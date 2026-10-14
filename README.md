@@ -34,3 +34,13 @@ npm run preview   # Preview the production build
 With the dev server running, `node scripts/browser-check.mjs` checks the live game: procedural terrain, movement, damage and death effects, skull progression, Z activation and timing, hostile pursuit and spawning, player damage and death/retry, audio controls, and mobile layout. It also renders the actual music and combat sounds offline to check for audible, finite samples without clipping. Set `CHROME_PATH` if Chrome is installed outside the default Windows location. Screenshots are written to the ignored `.artifacts/` directory.
 
 The game renders all artwork locally. Google Fonts supplies optional interface typography, with system fonts as fallbacks.
+
+## GitHub Pages
+
+In **Settings → Pages**, set **Source** to **GitHub Actions**. The
+**Deploy to GitHub Pages** workflow tests and builds the app, then publishes
+only `dist` on every push to `main`; it can also be run manually. Publishing
+the source repository directly skips Vite and causes module-loading errors.
+
+Relative asset URLs support `https://teuncm.nl/zelda-mario/` and other repository
+subpaths. The custom domain stays configured on the account's main Pages site.
